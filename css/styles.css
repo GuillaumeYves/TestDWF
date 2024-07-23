@@ -1,0 +1,243 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+/* Ensure the body takes the full width of the viewport */
+body {
+  min-width: 100vw;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+/* Check for elements that might cause overflow */
+* {
+  box-sizing: border-box; /* Ensure all elements include padding and border in their total width and height */
+}
+
+.wrapper {
+  width: 100vw;
+  height: auto;
+}
+
+.footer {
+  bottom: 0;
+  min-height: 50px;
+}
+
+.navbar-logo {
+  max-width: 144px; /* Maximum width of the logo */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Banner Section */
+.banner {
+  position: relative;
+  width: 100vw; /* Full viewport width */
+  height: 72vh; /* Adjust height as needed */
+  overflow: hidden; /* Ensure no overflow */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+/* Banner Image */
+.baniere_img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Full viewport width */
+  height: 100%; /* Full height of the banner */
+  object-fit: cover; /* Ensure the image covers the area without distortion */
+  z-index: -1; /* Ensure it stays behind the container */
+}
+
+/* Container for Centered Content */
+.container_experience {
+  position: relative; /* Position relative to ensure proper stacking */
+  display: flex;
+  justify-content: center; /* Center horizontally within itself */
+  align-items: center; /* Center vertically within itself */
+}
+
+/* Logo Styling */
+.logo_CGI {
+  width: 70%; /* Adjust width to make it larger */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Style the navbar */
+.navbar {
+  background: transparent;
+  position: fixed;
+  transition: background-color 0.3s, color 0.3s;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Change navbar background and link color on scroll */
+.navbar.scrolled {
+  background: white;
+}
+
+.navbar.scrolled .nav-link {
+  color: black !important;
+}
+
+.nav-link .fa-envelope {
+  color: white;
+  font-size: 1.5rem;
+}
+
+/* Scrolled state - black color for the icon */
+.navbar.scrolled .nav-link .fa-envelope {
+  color: black !important;
+}
+
+.nav-link {
+  color: white !important;
+  font-weight: 500;
+}
+
+.nav-item {
+  margin: 0 1vw; /* Add margin between items, adjust as needed */
+}
+
+.nav-link {
+  text-decoration: none;
+  position: relative; /* Position relative to use for the pseudo-element */
+  color: inherit; /* Ensure color inherits from parent */
+  transition: color 0.3s; /* Smooth color transition */
+}
+
+/* Create and style the underline pseudo-element */
+.nav-link span::after {
+  content: ""; /* Empty content for the pseudo-element */
+  position: absolute; /* Position absolutely within the nav-link */
+  left: 0; /* Start at the left edge */
+  bottom: 0; /* Position at the bottom of the link */
+  width: 0; /* Start with zero width */
+  height: 2px; /* Height of the underline */
+  background-color: currentColor; /* Use the current text color for the underline */
+  transition: width 0.3s; /* Smooth transition for the width */
+}
+
+/* On hover, expand the underline */
+.nav-link span:hover::after {
+  width: 100%; /* Expand to full width of the link */
+}
+
+/* Optional: Change link color on hover */
+.nav-link:hover {
+  color: black; /* Change text color if needed */
+}
+
+/* Sticky navbar */
+.navbar.sticky {
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+
+/* Style the side-nav */
+.side-nav {
+  transform: translateX(-100%);
+  transition: transform 0.3s;
+}
+
+.side-nav.open {
+  transform: translateX(0);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  align-items: start; /* Ensure both columns start from the top */
+}
+
+/* Image Styling */
+.presentation_img {
+  width: 100%; /* Make the image take the full width of its container */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensure the image covers the container area */
+  object-position: top; /* Keep the image fixed to the top */
+}
+
+.contenu_presentation {
+  margin: 5vw;
+}
+
+.presentation_titre {
+  position: relative;
+}
+
+.presentation_image {
+  position: absolute;
+  margin-top: -20px;
+  left: -80px; /* Adjust as needed to position the image */
+  z-index: -1; /* Place the image behind the text */
+}
+
+h1 {
+  display: block;
+  margin-left: 60px; /* Adjust to create space for the image */
+  position: relative;
+  z-index: 1;
+}
+
+h2 {
+  display: block;
+  margin-top: -10px;
+  margin-left: 65px;
+  position: relative;
+  z-index: 1;
+}
+
+.presentation_texte {
+  max-width: 100%;
+}
+
+.presentation_btn {
+  display: flex;
+  gap: 6vw;
+  justify-content: left;
+  flex-wrap: wrap;
+  margin-top: 8vh;
+}
+
+.btn_url {
+  background-color: #0021a6; /* Dark blue background */
+  color: white; /* White text */
+  border: 2px solid transparent; /* Transparent border to maintain size */
+  padding: 5px 15px; /* Padding for button size */
+  border-radius: 50px; /* Round borders */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Smooth transition */
+  font-size: 1rem; /* Font size */
+  font-weight: 700;
+}
+
+.btn_url:hover {
+  background-color: white; /* White background on hover */
+  color: #0021a6; /* Dark blue text on hover */
+  border-color: #0021a6; /* Change border color on hover */
+}
+
+.full-width-block {
+  width: 100vw; /* Full width of the viewport */
+  background-color: #001b88; /* Desired background color */
+  color: white; /* Text color for better contrast */
+  text-align: center; /* Center the text horizontally */
+  padding: 20px 0; /* Vertical padding for spacing */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  margin: 0; /* Remove any default margin */
+}
+
+.centered-hr {
+  width: 6%; /* Set the desired width of the hr */
+  margin: auto; /* Center the hr and add vertical spacing */
+  border: 0; /* Remove the default border */
+  border-top: 2px solid #ffffff; /* Add a custom top border with your color */
+}
