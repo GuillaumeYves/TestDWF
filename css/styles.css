@@ -1,46 +1,32 @@
 html,
 body {
+  line-height: 1.5;
   margin: 0;
   padding: 0;
   width: 100%;
-  overflow-x: hidden; /* Prevent horizontal overflow */
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
-/* Ensure the body takes the full width of the viewport */
-body {
-  min-width: 100vw;
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
-}
-
-/* Check for elements that might cause overflow */
 * {
-  box-sizing: border-box; /* Ensure all elements include padding and border in their total width and height */
+  box-sizing: border-box;
 }
 
-.wrapper {
-  width: 100vw;
-  height: auto;
-}
-
-.footer {
-  bottom: 0;
-  min-height: 50px;
-}
-
+/* Logo in the navbar */
 .navbar-logo {
-  max-width: 144px; /* Maximum width of the logo */
-  height: auto; /* Maintain aspect ratio */
+  max-width: 144px;
+  height: auto;
 }
 
 /* Banner Section */
 .banner {
   position: relative;
-  width: 100vw; /* Full viewport width */
-  height: 72vh; /* Adjust height as needed */
-  overflow: hidden; /* Ensure no overflow */
+  width: 100%;
+  height: 72vh;
+  overflow: hidden;
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
+  justify-content: center;
+  align-items: center;
 }
 
 /* Banner Image */
@@ -48,24 +34,23 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%; /* Full viewport width */
-  height: 100%; /* Full height of the banner */
-  object-fit: cover; /* Ensure the image covers the area without distortion */
-  z-index: -1; /* Ensure it stays behind the container */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 
-/* Container for Centered Content */
 .container_experience {
-  position: relative; /* Position relative to ensure proper stacking */
+  position: relative;
   display: flex;
-  justify-content: center; /* Center horizontally within itself */
-  align-items: center; /* Center vertically within itself */
+  justify-content: center;
+  align-items: center;
 }
 
-/* Logo Styling */
+/* Logo styling within the banner */
 .logo_CGI {
-  width: 70%; /* Adjust width to make it larger */
-  height: auto; /* Maintain aspect ratio */
+  width: 70%;
+  height: auto;
 }
 
 /* Style the navbar */
@@ -102,36 +87,31 @@ body {
 }
 
 .nav-item {
-  margin: 0 1vw; /* Add margin between items, adjust as needed */
+  margin: 0 1vw;
 }
 
 .nav-link {
   text-decoration: none;
-  position: relative; /* Position relative to use for the pseudo-element */
-  color: inherit; /* Ensure color inherits from parent */
-  transition: color 0.3s; /* Smooth color transition */
+  position: relative;
+  color: inherit;
+  transition: color 0.3s;
 }
 
-/* Create and style the underline pseudo-element */
+/* Create and style the underline */
 .nav-link span::after {
-  content: ""; /* Empty content for the pseudo-element */
-  position: absolute; /* Position absolutely within the nav-link */
-  left: 0; /* Start at the left edge */
-  bottom: 0; /* Position at the bottom of the link */
-  width: 0; /* Start with zero width */
-  height: 2px; /* Height of the underline */
-  background-color: currentColor; /* Use the current text color for the underline */
-  transition: width 0.3s; /* Smooth transition for the width */
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: currentColor;
+  transition: width 0.3s;
 }
 
 /* On hover, expand the underline */
 .nav-link span:hover::after {
-  width: 100%; /* Expand to full width of the link */
-}
-
-/* Optional: Change link color on hover */
-.nav-link:hover {
-  color: black; /* Change text color if needed */
+  width: 100%;
 }
 
 /* Sticky navbar */
@@ -141,7 +121,6 @@ body {
   width: 100%;
 }
 
-/* Style the side-nav */
 .side-nav {
   transform: translateX(-100%);
   transition: transform 0.3s;
@@ -151,38 +130,52 @@ body {
   transform: translateX(0);
 }
 
-.row {
-  display: grid;
-  grid-template-columns: 60% 40%;
-  align-items: start; /* Ensure both columns start from the top */
-}
-
-/* Image Styling */
-.presentation_img {
-  width: 100%; /* Make the image take the full width of its container */
-  height: auto; /* Maintain aspect ratio */
-  object-fit: cover; /* Ensure the image covers the container area */
-  object-position: top; /* Keep the image fixed to the top */
-}
-
+/* Presentation section */
 .contenu_presentation {
-  margin: 5vw;
+  padding: 0;
+  width: 100%;
+  max-height: 1300px;
+  display: flex;
+  overflow: hidden;
+}
+
+.col-md-7 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.col-md-5 {
+  position: relative;
+  flex: 1 1 auto;
+}
+
+.presentation_img {
+  width: 100%;
+  height: 100%;
+}
+
+.champText_presentation {
+  width: 90%;
+  margin-left: 50px;
+  padding-right: 50px;
 }
 
 .presentation_titre {
+  margin-top: 50px;
   position: relative;
 }
 
 .presentation_image {
   position: absolute;
   margin-top: -20px;
-  left: -80px; /* Adjust as needed to position the image */
-  z-index: -1; /* Place the image behind the text */
+  left: -80px;
+  z-index: -1;
 }
 
 h1 {
   display: block;
-  margin-left: 60px; /* Adjust to create space for the image */
+  margin-left: 60px;
   position: relative;
   z-index: 1;
 }
@@ -195,49 +188,267 @@ h2 {
   z-index: 1;
 }
 
-.presentation_texte {
-  max-width: 100%;
-}
-
 .presentation_btn {
   display: flex;
-  gap: 6vw;
-  justify-content: left;
   flex-wrap: wrap;
   margin-top: 8vh;
 }
 
-.btn_url {
-  background-color: #0021a6; /* Dark blue background */
-  color: white; /* White text */
-  border: 2px solid transparent; /* Transparent border to maintain size */
-  padding: 5px 15px; /* Padding for button size */
-  border-radius: 50px; /* Round borders */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Smooth transition */
-  font-size: 1rem; /* Font size */
+.btn_url1,
+.btn_url2 {
+  background-color: #0021a6;
+  color: white;
+  border: 2px solid transparent;
+  padding: 5px 15px;
+  border-radius: 50px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
   font-weight: 700;
 }
 
-.btn_url:hover {
-  background-color: white; /* White background on hover */
-  color: #0021a6; /* Dark blue text on hover */
-  border-color: #0021a6; /* Change border color on hover */
+.btn_url1 {
+  margin-right: 150px;
+  margin-bottom: 10px;
 }
 
-.full-width-block {
-  width: 100vw; /* Full width of the viewport */
-  background-color: #001b88; /* Desired background color */
-  color: white; /* Text color for better contrast */
-  text-align: center; /* Center the text horizontally */
-  padding: 20px 0; /* Vertical padding for spacing */
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
-  margin: 0; /* Remove any default margin */
+.btn_url1:hover,
+.btn_url2:hover {
+  background-color: white;
+  color: #0021a6;
+  border-color: #0021a6;
+}
+
+.section_chiffre a {
+  text-decoration: none;
+}
+
+.blue-block {
+  width: 100vw;
+  background-color: #00135e;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  box-sizing: border-box;
+  margin: 0;
 }
 
 .centered-hr {
-  width: 6%; /* Set the desired width of the hr */
-  margin: auto; /* Center the hr and add vertical spacing */
-  border: 0; /* Remove the default border */
-  border-top: 2px solid #ffffff; /* Add a custom top border with your color */
+  width: 6%;
+  margin: auto;
+  border: 0;
+  border-top: 2px solid #ffffff;
+}
+
+.chiffres {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.chiffre {
+  flex: 1 1 calc(33.333%);
+  box-sizing: border-box;
+  text-align: center;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.text_chiffre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.top-row {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 10px;
+}
+
+.text_chiffre h1 {
+  font-size: 60px;
+  margin: 0;
+}
+
+.text_chiffre h5 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.text_chiffre h3 {
+  margin: 0;
+  font-size: 36px;
+}
+
+.text_chiffre p {
+  margin: 0;
+  font-size: 18px;
+}
+
+.chiffre img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.section-double-img {
+  display: flex;
+}
+
+.image-comparison-row {
+  display: flex;
+  width: 100%;
+}
+
+.image-column-left,
+.image-column-right {
+  position: relative;
+  max-width: 50%;
+}
+
+.image-left {
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+}
+
+.image-column-right {
+  max-width: 50%;
+}
+
+.image-right {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  padding: 50px;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.7);
+  width: 80%;
+  height: 80%;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay-content {
+  text-align: center;
+}
+
+.overlay-left:hover,
+.overlay-right:hover {
+  opacity: 0.9;
+}
+
+.grey-block {
+  width: 100vw;
+  background-color: #ededed;
+  color: black;
+  text-align: center;
+  padding: 20px;
+}
+
+.link_references,
+.link_references:hover {
+  text-decoration: none;
+  color: black;
+  position: relative;
+  display: inline-block;
+}
+
+.link_references::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: darkblue;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.link_references:hover::after {
+  width: 100%;
+}
+
+.link_references:hover {
+  color: darkblue;
+}
+
+/* Style for the list of references */
+.ul_references {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 100px;
+}
+
+/* Style for each list item */
+.ul_references li {
+  flex: 1 1 200px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease;
+}
+
+.lien_references {
+  display: block;
+  overflow: hidden;
+}
+
+.lien_references img {
+  max-width: 260px;
+  height: 20vh;
+  object-fit: cover;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.lien_references {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect to scale up the image */
+.lien_references:hover {
+  transform: scale(1.1);
+}
+
+.footer {
+  bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #dfdfdf9e;
+  padding: 20px 0;
+  box-shadow: 0 -8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.footer-logo {
+  max-width: 280px;
+  height: auto;
+}
+
+.list-unstyled li {
+  margin-bottom: 10px;
+}
+
+/* Remove underline on links in the footer */
+.footer a,
+footer a:hover {
+  text-decoration: none;
+  color: black;
+  font-weight: 300;
 }
