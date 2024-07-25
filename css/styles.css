@@ -324,6 +324,20 @@ h2 {
   object-fit: cover;
 }
 
+.left-overlay-logo {
+  position: absolute;
+  max-width: 150px;
+  margin-top: -15px;
+  left: 20px;
+}
+
+.right-overlay-logo {
+  position: absolute;
+  max-width: 150px;
+  margin-top: -15px;
+  left: 20px;
+}
+
 .overlay {
   padding: 50px;
   position: absolute;
@@ -408,7 +422,7 @@ h2 {
 }
 
 .lien_references img {
-  max-width: 260px;
+  max-width: 200px;
   height: 20vh;
   object-fit: cover;
   margin-bottom: 20px;
